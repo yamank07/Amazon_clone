@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon_tailwind</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+      @theme {
+        --font-fam: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="flex flex-col">
+      <!-- first-nav -->
+      <div class="flex h-[60px] bg-[#131921] font-fam"> 
+        <!-- nav-left -->
+        <div class="flex w-[360px]">
+          <!-- logo select -->
+          <div class="px-[6px] hover:border hover:border-white hover:rounded-[2px] h-[50px] mt-[4px] ml-[10px]">
+            <a class="flex decoration-none" href="#" target="_self">
+              <img class="h-[30px] w-[98px] my-[14px]" src="./image/amazonLogo.png" alt="Logo" />
+              <span class="mt-[15px] ml-[1px] text-white text-[14px]">.in</span>
+            </a>
+          </div>
+          <!-- addr select -->
+          <div class="px-[2px] hover:border hover:border-white hover:rounded-[2px] h-[50px] w-[210px] mt-[4px] ml-[4px]">
+            <a class="decoration-none" href="">
+              <!-- addr-location -->
+              <div class="flex">
+                <!-- addr-icon -->
+                <div class="h-[50px] w-[20px] mt-[18px]">
+                  <img class="w-[30px] h-[25px] ml-[2px]" src="./image/location.svg" alt="locationPin" />
+                </div>
+                <!-- addr-inner -->
+                <div class="flex flex-col mt-[12px] ml-[7px] leading-[13.5px]">
+                  <!-- addr-first -->
+                  <div class="text-[12px] text-gray-300">Delivering to Hyderabad 500043</div>
+                  <!-- addr-second -->
+                  <div class="text-[15px] font-bold text-white decoration-none">Update location</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- search -->
+        <div class="flex h-[50px] max-w-[790px] mt-[4px] rounded-[8px] px-[8px] group">
+          <!-- search-drop -->
+          <div class="flex h-[43px] max-w-[197px]">
+            <select class="h-[40px] w-[197px] text-[14px] rounded-l-[5px] mt-[6px] text-gray-600 bg-gray-200 hover:cursor-pointer hover:bg-gray-300 outline-transparent hover:text-gray-900 focus:outline-orange-400" name="opt" id="opt">
+              <option class="bg-white" value="all" selected>All</option>
+              <option class="bg-white" value="a-skills">Alexa Skills</option>
+              <option class="bg-white" value="a-device">Amazon Devices</option>
+              <option class="bg-white" value="a-fashion">Amazon Fashion</option>
+              <option class="bg-white" value="a-fresh">Amazon Fresh</option>
+              <option class="bg-white" value="a-meat">Amazon Fresh Meat</option>
+              <option class="bg-white" value="a-pharma">Amazon Pharmacy</option>
+              <option class="bg-white" value="appliance">Appliance</option>
+              <option class="bg-white" value="apps-books">Apps & Books</option>
+              <option class="bg-white" value="audio-books">Audible & Audiobooks</option>
+              <option class="bg-white" value="baby">Baby</option>
+              <option class="bg-white" value="beauty">Beauty</option>
+              <option class="bg-white" value="books">Books</option>
+              <option class="bg-white" value="cars-bike">Car & Motorbikes</option>
+              <option class="bg-white" value="cloths-accessories">Clothing & Accessories</option>
+              <option class="bg-white" value="collectibles">Collectibles</option>
+              <option class="bg-white" value="comp-accessories">Computers & Accessories</option>
+              <option class="bg-white" value="deals">Deals</option>
+              <option class="bg-white" value="electronics">Electronics</option>
+              <option class="bg-white" value="furniture">Furniture</option>
+              <option class="bg-white" value="garden-outdoor">Garden & Outdoors</option>
+              <option class="bg-white" value="gift-cards">Gift Cards</option>
+              <option class="bg-white" value="grocery">Grocery & Gourmet Foods</option>
+              <option class="bg-white" value="health">Health & Personal Care</option>
+              <option class="bg-white" value="home-kitchen">Home & Kitchen</option>
+              <option class="bg-white" value="industrial-science">
+                Industrial & Scientific
+              </option>
+              <option class="bg-white" value="jewellery">Jewellery</option>
+              <option class="bg-white" value="kindle">Kindle Store</option>
+              <option class="bg-white" value="luggage">Luggage & Bags</option>
+              <option class="bg-white" value="luxury">Luxury Beauty</option>
+              <option class="bg-white" value="Shows">Movies & TV Shows</option>
+              <option class="bg-white" value="mp3">MP3 Music</option>
+              <option class="bg-white" value="music">Music</option>
+              <option class="bg-white" value="music-Instrument">Musical Instruments</option>
+              <option class="bg-white" value="office-product">Office Products</option>
+              <option class="bg-white" value="pet">Pet Supplies</option>
+              <option class="bg-white" value="prime">Prime Video</option>
+              <option class="bg-white" value="shoes">Shoes & Handbags</option>
+              <option class="bg-white" value="software">Softwares</option>
+              <option class="bg-white" value="sport">Sports, Fitness & Outdoors</option>
+              <option class="bg-white" value="subscribe">Subscribe & Save</option>
+              <option class="bg-white" value="tools">Tools & Home Improvement</option>
+              <option class="bg-white" value="toys">Toys & Games</option>
+              <option class="bg-white" value="under-500">Under <span>&#8377</span>500</option>
+              <option class="bg-white" value="video">Video Games</option>
+              <option class="bg-white" value="watches">Watches</option>
+            </select>
+            <!-- search-ip -->
+            <!-- <input class="h-[40px] w-[505px] mt-[6px] border-none bg-white focus:border-w-[3px] focus:border-yellow-700" type="text" placeholder="  Search Amazon.in" /> -->
+            <!-- search-btn -->
+            <!-- <button class="py-[0.9px] px-[8px] bg-[#efc85e] rounded-r-[5px] border-none hover:bg-[#e0ae25] focus:outline-w-[3px] focus:outline-orange-700">
+              <img class="h-[38px] w-[28px] mt-[0.8px]" src="./image/search.svg" alt="search" />
+            </button> -->
+          </div>
+          <!-- search-ip -->
+          <div class="h-[43px] max-w-[510px] -ml-[1px]">
+            <input class="h-[40px] w-[510px] mt-[6px] bg-white outline-transparent focus:outline-orange-400" type="text" placeholder="  Search Amazon.in" />
+          </div>
+          <!-- search-btn -->
+          <div class="mt-[6px] rounded-r-[5px]">
+            <button class="py-[6.3px] px-[8.5px] rounded-r-[5px] outline-white bg-orange-300 hover:cursor-pointer hover:bg-orange-400 focus:outline-orange-400">
+              <img class="size-[27px] mt-[0.8px]" src="./image/search.svg" alt="search" />
+            </button>
+          </div>
+        </div>
+        <!-- nav-right-->
+        <div class="flex w-[410px]">
+          <!-- lang select -->
+          <div class="flex h-[50px] w-[70px] mx-[2px] px-[4px] ml-[10px] mt-[4px] group relative hover:cursor-pointer hover:border hover:border-white hover:rounded-[2px]">
+            <!-- lang-main-container -->
+            <!-- <div class="group"> -->
+              <a class="flex decoration-none" href="">
+                <!-- lang-flag -->
+                <div class="flex px-[2px]">
+                  <img class="w-[25px] h-[20px] mt-[17px] ml-[2px]" src="./image/flag.svg" alt="flag" />
+                  <!-- lang-code -->
+                  <span class="decoration-none text-[13.5px] text-white font-bold  mt-[17px] ml-[3px]">EN</span>
+                  <img
+                    class="h-[18px] w-[24px] mt-[20px] -ml-[2px]"
+                    src="./image/drop-down.svg"
+                    alt="drop-down"
+                  >
+                </div>
+                <!-- drop-container lang-drop-container -->
+                <div class="flex absolute z-5 bg-white rounded-[2px] mt-[48px] invisible py-[5px] shadow-xl  after:absolute after:-ml-[5px] after:border-[10px] after:border-x-transparent after:border-t-transparent after:border-b-white  flex-col w-[250px] -top-[2%] -left-[5%]  after:bottom-[100%] after:left-[22.2%]  group-hover:visible">
+                  <!-- radio-opt -->  
+                  <a href="" class="decoration-none flex px-[20px] py-[10px] hover:text-red-600 hover:underline">
+                    <input class="size-[15px] text-red-600 focus:ring-red-600" type="radio" id="EN" value="English" name="language" checked>
+                    <label class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px]" for="EN">English - EN</label>
+                  </a>
+                  <hr class="text-gray-200">
+                  <!-- radio-opt -->
+                  <a href="" class="decoration-none flex px-[20px] pt-[10px] py-[5px] hover:text-red-600 hover:underline">
+                    <input
+                      class="size-[15px] hover:bg-red-500" 
+                      type="radio"
+                      id="HI"
+                      value="Hindi"
+                      name="language"
+                    >
+                    <label class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px]" for="HI">Hindi - HI</label>
+                  </a>
+                  <!-- radio-opt -->
+                  <a href="" class="decoration-none flex px-[20px] py-[5px] bg-amber-300 hover:text-red-600 hover:underline">
+                    <input
+                      class="size-[15px] text-red-600 focus:ring-red-600" 
+                      type="radio"
+                      id="TA"
+                      value="Tamil"
+                      name="language"
+                    >
+                    <label class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px] hover:text-red-600 hover:cursor-pointer" for="TA">Tamil - TA</label>
+                  </a>
+                  <!-- radio-opt -->
+                  <a href="" class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline">
+                    <input
+                      class="size-[15px] hover:bg-red-500" 
+                      type="radio"
+                      id="TE"
+                      value="Telugu"
+                      name="language"
+                    >
+                    <label class="text-[13.5px] text-gray-800  px-[5px] -mt-[3px]" for="TE">Telugu - TE</label>
+                  </a>
+                  <!-- radio-opt -->
+                  <a href="" class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline">
+                    <input
+                      class="size-[15px] hover:bg-red-500" 
+                      type="radio"
+                      id="KN"
+                      value="Kannad"
+                      name="language"
+                    >
+                    <label class="text-[13.5px] text-gray-800  px-[5px] -mt-[3px]" for="KN">Kannada - KN</label>
+                  </a>
+                  <!-- radio-opt -->
+                  <a href="" class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline">
+                    <input
+                      class="size-[15px] hover:bg-red-500" 
+                      type="radio"
+                      id="ML"
+                      value="Malyalam"
+                      name="language"
+                    >
+                    <label class="text-[13.5px] text-gray-800  px-[5px] -mt-[3px]" for="ML">Malyalam - ML</label>
+                  </a>
+                  <!-- radio-opt -->
+                  <a href="" class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline">
+                    <input
+                      class="size-[15px] hover:bg-red-500" 
+                      type="radio"
+                      id="BE"
+                      value="Bengali"
+                      name="language"
+                    >
+                    <label class="text-[13.5px] text-gray-800  px-[5px] -mt-[3px]" for="BE">Bengali - BE</label>
+                  </a>
+                  <!-- radio-opt -->
+                  <a href="" class="decoration-none flex px-[20px] py-[5px] hover:text-red-600">
+                    <input
+                      class="size-[15px] hover:bg-red-500" 
+                      type="radio"
+                      id="MR"
+                      value="Marathi"
+                      name="language"
+                    >
+                    <label class="text-[13.5px] text-gray-800  px-[5px] -mt-[3px]" for="MR">Marathi - MR</label>
+                  </a>
+                  <!-- learn -->
+                  <a href="" class="decoration-none text-[13.5px] px-[40px] pt-[14px] pb-[5px] text-blue-800 hover:underline">Learn more</a>
+                  <hr class="text-gray-200">
+                  <div class="flex px-[20px] py-[6px]">
+                    <img class="size-[15px] mt-[2px]"  src="./image/flag.svg" alt="region-flag">
+                    <span class="text-[13px] px-[5px]">
+                      You are shopping on Amazon.in
+                    </span>
+                  </div>
+                  <!-- region -->
+                  <a href="" class="decoration-none text-[13.5px] px-[40px] text-blue-700 hover:underline">Change country/region</a>
+                </div>
+              </a>
+            <!-- </div> -->
+          </div>
+          <!-- accnt select -->
+          <div class="h-[50px] w-[135px] mt-[4px] mx-[2px] px-[2px] group relative hover:border hover:border-white hover:rounded-[2px]">
+            <!-- accnt-main-container -->
+            <!-- <div class="group relative"> -->
+              <a class="decoration-none" href="">
+                <!-- accnt-sign-in -->
+                <div class="flex text-white ml-[6px]">
+                  <!-- accnt-inner -->
+                  <div class="flex flex-col mt-[9px] leading-[13.5px]">
+                    <!-- accnt-line1 -->
+                    <span class="text-[12px]">Hello, sign in</span>
+                    <!-- accnt-line2 -->
+                    <span class="font-bold text-[14px]">Account & Lists</span>
+                  </div>
+                  <img class="size-[18px] mt-[21px]" src="./image/drop-down.svg" alt="drop-down">
+                </div>
+                <!-- drop-container accnt-drop-container -->
+                <div class="flex absolute z-5 bg-white rounded-[2px] invisible mt-[48px]  py-[5px] shadow-xl  after:absolute after:-ml-[5px] after:border-[10px] after:border-x-transparent after:border-t-transparent after:border-b-white  flex-col w-[490px] -top-[2.5%] -left-[184%]  after:bottom-[100%] after:left-[73.7%]  group-hover:visible">
+                  <!-- inner-sign-in -->
+                  <div class="flex flex-col text-center font-fam">
+                    <!-- sign-in-btn -->
+                    <a href="" class="text-[13px] w-[230px] mx-[135px] mt-[10px] py-[8px] rounded-[8px] bg-yellow-300 hover:underline">Sign in</a>
+                    <span class="text-[11px] py-[5px]">
+                      New customer? <a class="text-blue-700 underline hover:text-red-700" href="">Start here</a>
+                    </span>
+                    <hr class="text-gray-200">
+                  </div>
+                  <!-- inner-content-->
+                  <div class="flex my-[10px] ">
+                    <!-- sign-in-col1 -->
+                    <div class="flex flex-col w-[190px] ml-[25px]">
+                      <span class="text-[15px] font-bold mb-[8px]">
+                        Your Lists
+                      </span>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Create a Wish List</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Wish from Any Website</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Baby Wishlist</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Discover Your Style</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Explore Showroom</a>
+                    </div>
+                    <!-- sign-in-col2 -->
+                    <div class="flex flex-col mr-[20px] ml-[70px] ">
+                      <span class="text-[15px] font-bold mb-[8px]">
+                        Your Account
+                      </span>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Your Account</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Your Orders</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Your Wish List</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Your Recommendations</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Your Prime Membership</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Your Prime Video</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Your Subscribe and Saved Items</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Memberships and Subscriptions</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline" href="">Your Seller Account</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] leading-[15px] mr-[10px] hover:text-red-500 hover:underline" href="">Manage Your Content and Devices</a>
+                      <a class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] leading-[15px] mr-[10px] hover:text-red-500 hover:underline" href="">Register for a Free Business Account</a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            <!-- </div> -->
+          </div>
+          <!-- order select -->
+          <div class="h-[50px] w-[75px] px-[2px] mx-[2px] mt-[4px] font-fam hover:border hover:border-white ">
+            <a class="decoration-none" href="">
+              <!-- order-return -->
+              <div class="flex flex-col text-white mt-[9px] leading-[13.5px] ml-[4px]">
+                <!-- order-line1 -->
+                <span class="text-[12px]">Returns</span>
+                <!-- order-line2 -->
+                <span class="font-bold text-[14px]">& Orders</span>
+              </div>
+            </a>
+          </div>
+          <!-- <div class="cart select px-[6px]"> -->
+          <div class="h-[50px] w-[80px] px-[2px] mx-[2px] mt-[4px] hover:border hover:border-white">
+            <a class="decoration-none" href="">
+              <!-- <div class="cart-inner"> -->
+              <div class="flex text-white">
+                <img class="size-[42px] mt-[2px]" src="./image/cart.svg" alt="cart" />
+                <span class="font-bold mt-[16px] -ml-[4px]">Cart</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  </body>
+</html>
