@@ -3,94 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amazon_tailwind</title>
-    <link rel="stylesheet" href="./nav.css" />
+    <title>Rough</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <style>
+    <style type="text/tailwindcss">
       * {
-        box-sizing: border-box;
-        /* margin: 0;
-        padding: 0; */
-      }
-      /* body {
-        background-color: rgba(240, 240, 240);
-      } */
-      section,
-      footer {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+        @apply box-border;
       }
       @theme {
         --font-fam: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        --bg-nav1: #131921;
+        --bg-nav2: #232f3e;
+        --bg-allheader: #232f3e;
+        --bg-backtop: #3b4b5b;
+        --bg-xtralinks-lang: #23303e;
+        --bg-rights: #11161d;
       }
       .font-fam {
         font-family: var(--font-fam);
       }
+      .bg-nav1 {
+        background-color: var(--bg-nav1);
+      }
+      .bg-nav2 {
+        background-color: var(--bg-nav2);
+      }
+      .bg-allheader {
+        background-color: var(--bg-allheader);
+      }
+      .bg-backtop {
+        background-color: var(--bg-backtop);
+      }
+      .bg-xtralinks-lang {
+        background-color: var(--bg-xtralinks-lang);
+      }
+      .bg-rights {
+        background-color: var(--bg-rights);
+      }
+      @utility select {
+        @apply ml-[5px] hover:border hover:border-white hover:rounded-[2px] hover:cursor-pointer;
+      }
+      @utility drop-container {
+        @apply flex flex-col absolute z-5 bg-white rounded-[2px] mt-[48px] py-[5px] shadow-xl after:absolute after:-ml-[5px] after:border-[10px] after:border-x-transparent  invisible group-hover:visible;
+      }
+      @utility box4-row {
+        @apply flex justify-evenly h-[450px] w-[100%];
+      }
+      @utility box4-box {
+        @apply h-[450px] w-[350px] rounded-[2px] bg-white shadow-black;
+      }
+      @utility box5-row {
+        @apply flex flex-col h-[325px] w-[97.3%] m-auto bg-white inset-shadow-black;
+      }
+      @utility box5-box {
+        @apply h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black;
+      }
+      @utility slide-arrow {
+        @apply h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible;
+      }
+      @utility xtralink-style {
+        @apply text-[16px] text-gray-200 leading-[26.5px] decoration-1 hover:underline;
+      }
+      @utility lang-label {
+        @apply text-[14px] text-gray-800 px-[5px] -mt-[3px] hover:text-red-600 hover:cursor-pointer;
+      }
     </style>
   </head>
-  <body class="bg-neutral-300">
-    <header class="flex flex-col">
-      <!-- first-nav -->
-      <div class="flex h-[60px] bg-[#131921] font-fam">
-        <!-- nav-left -->
-        <div class="flex w-[360px]">
-          <!-- logo select -->
-          <div
-            class="px-[6px] hover:border hover:border-white hover:rounded-[2px] h-[50px] mt-[4px] ml-[10px]"
-          >
-            <a class="flex decoration-none" href="#" target="_self">
-              <img
-                class="h-[30px] w-[98px] my-[14px]"
-                src="./image/amazonLogo.png"
-                alt="Logo"
-              />
-              <span class="mt-[15px] ml-[1px] text-white text-[14px]">.in</span>
+  <body class="bg-gray-300">
+    <header class="flex flex-col w-[100%]">
+      <!-- nav1   -->
+      <div class="flex h-[60px] w-[100%] font-fam bg-nav1">
+        <!-- leftNav -->
+        <div class="leftNav flex w-[360px] py-[3px]">
+          <!-- logo -->
+          <div class="select h-[50px] w-[130px] px-[8px] ml-[10px]">
+            <a class="decoration-none flex" id="home" href="#" target="_self">
+              <div class="h-[50px] w-[98px]">
+                <img
+                  class="h-[30px] my-[14px]"
+                  src="./image/amazonLogo.png"
+                  alt="Logo"
+                />
+              </div>
+              <span class="w-[15px] text-[15px] text-white ml-[1px] my-[15px]"
+                >.in</span
+              >
             </a>
           </div>
-          <!-- addr select -->
-          <div
-            class="px-[2px] hover:border hover:border-white hover:rounded-[2px] h-[50px] w-[210px] mt-[4px] ml-[4px]"
-          >
+          <!-- addr -->
+          <div class="select h-[50px] w-[215px] px-[6px]">
             <a class="decoration-none" href="">
-              <!-- addr-location -->
               <div class="flex">
-                <!-- addr-icon -->
-                <div class="h-[50px] w-[20px] mt-[18px]">
+                <div class="h-[50px] w-[20px]">
                   <img
-                    class="w-[30px] h-[25px] ml-[2px]"
+                    class="size-[30px] mt-[15px]"
                     src="./image/location.svg"
                     alt="locationPin"
                   />
                 </div>
-                <!-- addr-inner -->
-                <div class="flex flex-col mt-[12px] ml-[7px] leading-[13.5px]">
-                  <!-- addr-first -->
-                  <div class="text-[12px] text-gray-300">
+                <div class="flex flex-col leading-[13.5px] my-[10px]">
+                  <span class="text-[13.5px] text-gray-300">
                     Delivering to Hyderabad 500043
-                  </div>
-                  <!-- addr-second -->
-                  <div class="text-[15px] font-bold text-white decoration-none">
+                  </span>
+                  <span class="text-[16px] text-white font-bold">
                     Update location
-                  </div>
+                  </span>
                 </div>
               </div>
             </a>
           </div>
         </div>
         <!-- search -->
-        <div
-          class="flex h-[50px] max-w-[800px] mt-[4px] rounded-[8px] ml-[10px] group"
-        >
+        <div class="search flex relative w-[750px] py-[4px] ml-[10px] group">
           <!-- search-drop -->
-          <div class="flex h-[43px] max-w-[197px]">
+          <div
+            class="flex h-[40px] my-[6px] max-w-[230px] rounded-l-[5px] bg-orange-300"
+          >
+            <!-- field-sizing-content max-w-[230px]-->
             <select
-              class="h-[40px] w-[197px] text-[14px] rounded-l-[5px] mt-[6px] text-gray-600 bg-gray-200 hover:cursor-pointer hover:bg-gray-300 outline-transparent hover:text-gray-900 focus:outline-orange-400"
+              class="h-[100%] min-w-[50px] max-w-[230px] text-[16px] text-gray-600 bg-gray-200 rounded-l-[5px] hover:cursor-pointer hover:bg-gray-300 outline-transparent hover:text-gray-900 focus:outline-orange-400"
               name="opt"
               id="opt"
             >
-              <option class="bg-white" value="all" selected>All</option>
+              <option class="bg-white text-[14px]" value="all" selected>
+                All
+              </option>
               <option class="bg-white" value="a-skills">Alexa Skills</option>
               <option class="bg-white" value="a-device">Amazon Devices</option>
               <option class="bg-white" value="a-fashion">Amazon Fashion</option>
@@ -159,7 +196,7 @@
               <option class="bg-white" value="subscribe">
                 Subscribe & Save
               </option>
-              <option class="bg-white" value="tools">
+              <option class="bg-white text-[16px]" value="tools">
                 Tools & Home Improvement
               </option>
               <option class="bg-white" value="toys">Toys & Games</option>
@@ -169,86 +206,72 @@
               <option class="bg-white" value="video">Video Games</option>
               <option class="bg-white" value="watches">Watches</option>
             </select>
-            <!-- search-ip -->
-            <!-- <input class="h-[40px] w-[505px] mt-[6px] border-none bg-white focus:border-w-[3px] focus:border-yellow-700" type="text" placeholder="  Search Amazon.in" /> -->
-            <!-- search-btn -->
-            <!-- <button class="py-[0.9px] px-[8px] bg-[#efc85e] rounded-r-[5px] border-none hover:bg-[#e0ae25] focus:outline-w-[3px] focus:outline-orange-700">
-              <img class="h-[38px] w-[28px] mt-[0.8px]" src="./image/search.svg" alt="search" />
-            </button> -->
           </div>
-          <!-- search-ip -->
-          <div class="h-[43px] max-w-[510px] -ml-[1px]">
+          <!-- search-ip absolute right-[80px] -->
+          <div class="h-[40px] max-w-[680px] min-w-[500px] -ml-[1px]">
             <input
-              class="h-[40px] w-[510px] mt-[6px] bg-white outline-transparent focus:outline-orange-400"
+              class="h-[40px] max-w-[680px] min-w-[500px] mt-[6px] bg-white outline-transparent focus:outline-orange-400"
               type="text"
               placeholder="  Search Amazon.in"
             />
           </div>
-          <!-- search-btn -->
-          <div class="mt-[6px] max-w-[90px] rounded-r-[5px]">
+          <!-- search-btn absolute right-[0] top-[10px] -->
+          <div class="h-[40px] my-[6px] max-w-[100px] rounded-r-[5px]">
             <button
-              class="w-[45px] py-[6.3px] px-[8px] rounded-r-[5px] outline-white bg-orange-300 hover:cursor-pointer hover:bg-orange-400 focus:outline-orange-400"
+              class="w-[45px] py-[6px] px-[8px] rounded-r-[5px] bg-orange-300 hover:cursor-pointer hover:bg-orange-400"
+              href=""
             >
-              <img
-                class="size-[27px] mt-[0.8px]"
-                src="./image/search.svg"
-                alt="search"
-              />
+              <img class="size-[28px]" src="./image/search.svg" alt="search" />
             </button>
           </div>
         </div>
-        <!-- nav-right-->
-        <div class="flex w-[410px]">
-          <!-- lang select -->
+        <!-- rightNav -->
+        <div class="rightNav flex w-[410px] py-[5px]">
+          <!-- lang -->
           <div
-            class="flex h-[50px] w-[70px] px-[4px] ml-[12px] mt-[4px] group relative hover:cursor-pointer hover:border hover:border-white hover:rounded-[2px]"
+            class="select h-[50px] w-[73px] px-[6px] ml-[15px] relative group"
           >
-            <!-- lang-main-container -->
-            <!-- <div class="group"> -->
             <a class="flex decoration-none" href="">
               <!-- lang-flag -->
-              <div class="flex px-[2px]">
-                <img
-                  class="w-[25px] h-[20px] mt-[17px] ml-[2px]"
-                  src="./image/flag.svg"
-                  alt="flag"
-                />
+              <div class="flex">
+                <div class="h-[50px] w-[25px] ml-[3px]">
+                  <img
+                    class="h-[20px] my-[18px]"
+                    src="./image/flag.svg"
+                    alt="flag"
+                  />
+                </div>
                 <!-- lang-code -->
-                <span
-                  class="decoration-none text-[13.5px] text-white font-bold mt-[17px] ml-[3px]"
+                <span class="text-[16px] text-white font-bold mt-[16px]"
                   >EN</span
                 >
-                <img
-                  class="h-[18px] w-[24px] mt-[20px] -ml-[2px]"
-                  src="./image/drop-down.svg"
-                  alt="drop-down"
-                />
+                <div class="h-[50px] w-[24px]">
+                  <img
+                    class="h-[18px] mt-[21px] -ml-[2px]"
+                    src="./image/drop-down.svg"
+                    alt="drop-down"
+                  />
+                </div>
               </div>
-              <!-- drop-container lang-drop-container -->
+              <!-- lang-drop-container -->
               <div
-                class="flex absolute z-5 bg-white rounded-[2px] mt-[48px] invisible py-[5px] shadow-xl after:absolute after:-ml-[5px] after:border-[10px] after:border-x-transparent after:border-t-transparent after:border-b-white flex-col w-[250px] -top-[2%] -left-[5%] after:bottom-[100%] after:left-[22.2%] group-hover:visible"
+                class="drop-container after:border-t-transparent after:border-b-white w-[250px] -top-[2%] -left-[5%] after:bottom-[100%] after:left-[23.5%]"
               >
-                <!-- radio-opt -->
                 <a
                   href=""
                   class="decoration-none flex px-[20px] py-[10px] hover:text-red-600 hover:underline"
                 >
                   <input
-                    class="size-[15px] text-red-600 focus:ring-red-600"
+                    class="size-[15px] text-red-600"
                     type="radio"
                     id="EN"
                     value="English"
                     name="language"
                     checked
                   />
-                  <label
-                    class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px]"
-                    for="EN"
-                    >English - EN</label
-                  >
+                  <label class="lang-label" for="EN">English - EN</label>
                 </a>
                 <hr class="text-gray-200" />
-                <!-- radio-opt -->
                 <a
                   href=""
                   class="decoration-none flex px-[20px] pt-[10px] py-[5px] hover:text-red-600 hover:underline"
@@ -260,16 +283,11 @@
                     value="Hindi"
                     name="language"
                   />
-                  <label
-                    class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px]"
-                    for="HI"
-                    >Hindi - HI</label
-                  >
+                  <label class="lang-label" for="HI">हिन्दी - HI</label>
                 </a>
-                <!-- radio-opt -->
                 <a
                   href=""
-                  class="decoration-none flex px-[20px] py-[5px] bg-amber-300 hover:text-red-600 hover:underline"
+                  class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
                 >
                   <input
                     class="size-[15px] text-red-600 focus:ring-red-600"
@@ -278,13 +296,8 @@
                     value="Tamil"
                     name="language"
                   />
-                  <label
-                    class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px] hover:text-red-600 hover:cursor-pointer"
-                    for="TA"
-                    >Tamil - TA</label
-                  >
+                  <label class="lang-label" for="TA">தமிழ் - TA</label>
                 </a>
-                <!-- radio-opt -->
                 <a
                   href=""
                   class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
@@ -296,13 +309,8 @@
                     value="Telugu"
                     name="language"
                   />
-                  <label
-                    class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px]"
-                    for="TE"
-                    >Telugu - TE</label
-                  >
+                  <label class="lang-label" for="TE">తెలుగు - TE</label>
                 </a>
-                <!-- radio-opt -->
                 <a
                   href=""
                   class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
@@ -314,13 +322,8 @@
                     value="Kannad"
                     name="language"
                   />
-                  <label
-                    class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px]"
-                    for="KN"
-                    >Kannada - KN</label
-                  >
+                  <label class="lang-label" for="KN">ಕನ್ನಡ - KN</label>
                 </a>
-                <!-- radio-opt -->
                 <a
                   href=""
                   class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
@@ -329,16 +332,11 @@
                     class="size-[15px] hover:bg-red-500"
                     type="radio"
                     id="ML"
-                    value="Malyalam"
+                    value="Malayalam"
                     name="language"
                   />
-                  <label
-                    class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px]"
-                    for="ML"
-                    >Malyalam - ML</label
-                  >
+                  <label class="lang-label" for="ML">മലയാളം - ML</label>
                 </a>
-                <!-- radio-opt -->
                 <a
                   href=""
                   class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
@@ -347,16 +345,11 @@
                     class="size-[15px] hover:bg-red-500"
                     type="radio"
                     id="BE"
-                    value="Bengali"
+                    value="Bengla"
                     name="language"
                   />
-                  <label
-                    class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px]"
-                    for="BE"
-                    >Bengali - BE</label
-                  >
+                  <label class="lang-label" for="BE">বাংলা - BN</label>
                 </a>
-                <!-- radio-opt -->
                 <a
                   href=""
                   class="decoration-none flex px-[20px] py-[5px] hover:text-red-600"
@@ -368,30 +361,24 @@
                     value="Marathi"
                     name="language"
                   />
-                  <label
-                    class="text-[13.5px] text-gray-800 px-[5px] -mt-[3px]"
-                    for="MR"
-                    >Marathi - MR</label
-                  >
+                  <label class="lang-label" for="MR">मराठी - MR</label>
                 </a>
-                <!-- learn -->
                 <a
                   href=""
-                  class="decoration-none text-[13.5px] px-[40px] pt-[14px] pb-[5px] text-blue-800 hover:underline"
+                  class="decoration-none text-[14px] px-[40px] pt-[10px] pb-[5px] text-blue-800 hover:underline"
                   >Learn more</a
                 >
-                <hr class="text-gray-200" />
-                <div class="flex px-[20px] py-[6px]">
+                <hr class="text-gray-300 mt-[5px]" />
+                <div class="flex px-[20px] py-[6px] mt-[3px]">
                   <img
-                    class="size-[15px] mt-[2px]"
-                    src="./image/flag.svg"
+                    class="size-[16px] mt-[3px]"
+                    src="./Amazon_Clone/using-html-tailwind/image/flag.svg"
                     alt="region-flag"
                   />
-                  <span class="text-[13px] px-[5px]">
+                  <span class="text-[14px] px-[5px]">
                     You are shopping on Amazon.in
                   </span>
                 </div>
-                <!-- region -->
                 <a
                   href=""
                   class="decoration-none text-[13.5px] px-[40px] text-blue-700 hover:underline"
@@ -399,519 +386,523 @@
                 >
               </div>
             </a>
-            <!-- </div> -->
           </div>
-          <!-- accnt select -->
-          <div
-            class="h-[50px] w-[135px] ml-[4px] mt-[4px] px-[2px] group relative hover:border hover:border-white hover:rounded-[2px]"
-          >
-            <!-- accnt-main-container -->
-            <!-- <div class="group relative"> -->
+          <!-- accnt -->
+          <div class="select h-[50px] w-[133px] px-[4px] relative group">
             <a class="decoration-none" href="">
-              <!-- accnt-sign-in -->
-              <div class="flex text-white ml-[6px]">
-                <!-- accnt-inner -->
-                <div class="flex flex-col mt-[9px] leading-[13.5px]">
-                  <!-- accnt-line1 -->
-                  <span class="text-[12px]">Hello, sign in</span>
-                  <!-- accnt-line2 -->
-                  <span class="font-bold text-[14px]">Account & Lists</span>
+              <div class="flex">
+                <div
+                  class="flex flex-col h-[50px] w-[130px] ml-[6px] text-white leading-[13.5px]"
+                >
+                  <span class="text-[13px] mt-[10px]">Hello, sign in</span>
+                  <span class="text-[16px] font-bold">Account & Lists</span>
                 </div>
-                <img
-                  class="size-[18px] mt-[21px]"
-                  src="./image/drop-down.svg"
-                  alt="drop-down"
-                />
+                <div class="h-[50px] w-[20px]">
+                  <img
+                    class="h-[18px] mt-[23px] -ml-[2px]"
+                    src="./image/drop-down.svg"
+                    alt="drop-down"
+                  />
+                </div>
               </div>
-              <!-- drop-container accnt-drop-container -->
-              <div
-                class="flex absolute z-5 bg-white rounded-[2px] invisible mt-[48px] py-[5px] shadow-xl after:absolute after:-ml-[5px] after:border-[10px] after:border-x-transparent after:border-t-transparent after:border-b-white flex-col w-[490px] -top-[2.5%] -left-[184%] after:bottom-[100%] after:left-[73.7%] group-hover:visible"
-              >
-                <!-- inner-sign-in -->
-                <div class="flex flex-col text-center font-fam">
-                  <!-- sign-in-btn -->
-                  <a
-                    href=""
-                    class="text-[13px] w-[230px] mx-[135px] mt-[10px] py-[8px] rounded-[8px] bg-yellow-300 hover:underline"
-                    >Sign in</a
+            </a>
+            <!-- drop-container accnt-drop-container -->
+            <div
+              class="drop-container after:border-t-transparent after:border-b-white w-[490px] -top-[3%] -left-[184%] after:bottom-[100%] after:left-[72.5%]"
+            >
+              <!-- inner-sign-in -->
+              <div class="flex flex-col text-center font-fam">
+                <!-- sign-in-btn -->
+                <a
+                  href=""
+                  class="text-[14px] w-[230px] mx-[135px] mt-[10px] py-[8px] rounded-[8px] bg-yellow-300 hover:underline"
+                  >Sign in</a
+                >
+                <span class="text-[11px] py-[5px]">
+                  New customer?
+                  <a class="text-blue-700 underline hover:text-red-700" href=""
+                    >Start here</a
                   >
-                  <span class="text-[11px] py-[5px]">
-                    New customer?
-                    <a
-                      class="text-blue-700 underline hover:text-red-700"
-                      href=""
-                      >Start here</a
-                    >
+                </span>
+                <hr class="text-gray-200" />
+              </div>
+              <!-- inner-content-->
+              <div class="flex my-[10px]">
+                <!-- sign-in-col1 -->
+                <div class="flex flex-col w-[190px] ml-[25px]">
+                  <span class="text-[18px] font-bold mb-[8px]">
+                    Your Lists
                   </span>
-                  <hr class="text-gray-200" />
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Create a Wish List</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Wish from Any Website</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Baby Wishlist</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Discover Your Style</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Explore Showroom</a
+                  >
                 </div>
-                <!-- inner-content-->
-                <div class="flex my-[10px]">
-                  <!-- sign-in-col1 -->
-                  <div class="flex flex-col w-[190px] ml-[25px]">
-                    <span class="text-[15px] font-bold mb-[8px]">
-                      Your Lists
-                    </span>
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Create a Wish List</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Wish from Any Website</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Baby Wishlist</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Discover Your Style</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Explore Showroom</a
-                    >
-                  </div>
-                  <!-- sign-in-col2 -->
-                  <div class="flex flex-col mr-[20px] ml-[70px]">
-                    <span class="text-[15px] font-bold mb-[8px]">
-                      Your Account
-                    </span>
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Your Account</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Your Orders</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Your Wish List</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Your Recommendations</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Your Prime Membership</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Your Prime Video</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Your Subscribe and Saved Items</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Memberships and Subscriptions</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Your Seller Account</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] leading-[15px] mr-[10px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Manage Your Content and Devices</a
-                    >
-                    <a
-                      class="decoration-none text-[13px] text-gray-600 font-semibold py-[3px] leading-[15px] mr-[10px] hover:text-red-500 hover:underline"
-                      href=""
-                      >Register for a Free Business Account</a
-                    >
-                  </div>
+                <!-- sign-in-col2 -->
+                <div class="flex flex-col mr-[20px] ml-[70px]">
+                  <span class="text-[18px] font-bold mb-[8px]">
+                    Your Account
+                  </span>
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Your Account</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Your Orders</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Your Wish List</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Your Recommendations</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Your Prime Membership</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Your Prime Video</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Your Subscribe and Saved Items</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Memberships and Subscriptions</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Your Seller Account</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] leading-[15px] mr-[10px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Manage Your Content and Devices</a
+                  >
+                  <a
+                    class="decoration-none text-[14.5px] text-gray-600 py-[3px] leading-[15px] mr-[10px] hover:text-red-500 hover:underline"
+                    href=""
+                    >Register for a Free Business Account</a
+                  >
                 </div>
               </div>
-            </a>
-            <!-- </div> -->
+            </div>
           </div>
-          <!-- order select -->
-          <div
-            class="h-[50px] w-[75px] ml-[4px] px-[2px] mt-[4px] font-fam hover:border hover:border-white"
-          >
+          <!-- orders -->
+          <div class="select h-[50px] w-[73px] px-[6px]">
             <a class="decoration-none" href="">
-              <!-- order-return -->
               <div
-                class="flex flex-col text-white mt-[9px] leading-[13.5px] ml-[4px]"
+                class="flex flex-col h-[50px] w-[70px] text-white leading-[13.5px]"
               >
-                <!-- order-line1 -->
-                <span class="text-[12px]">Returns</span>
-                <!-- order-line2 -->
-                <span class="font-bold text-[14px]">& Orders</span>
+                <span class="text-[13px] mt-[10px]">Returns</span>
+                <span class="text-[16px] font-bold">& Orders</span>
               </div>
             </a>
           </div>
-          <!-- cart select -->
-          <div
-            class="h-[50px] w-[80px] ml-[4px] px-[2px] mt-[4px] hover:border hover:border-white"
-          >
+          <!-- cart -->
+          <div class="select h-[50px] w-[80px] px-[6px]">
             <a class="decoration-none" href="">
-              <!-- <div class="cart-inner"> -->
               <div class="flex text-white">
-                <img
-                  class="size-[42px] mt-[2px]"
-                  src="./image/cart.svg"
-                  alt="cart"
-                />
-                <span class="font-bold mt-[16px] -ml-[4px]">Cart</span>
+                <div class="h-[50px] w-[45px]">
+                  <img
+                    class="size-[42px] my-[3px]"
+                    src="./image/cart.svg"
+                    alt="cart"
+                  />
+                </div>
+                <span class="text-[16px] font-fam font-bold mt-[18px]"
+                  >Cart</span
+                >
               </div>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- second-nav -->
-      <div class="flex flex-nowrap h-[40px] font-fam bg-[#232f3e]">
-        <!-- nav-left select all -->
-        <div
-          class="inline-block hover:border hover:border-white hover:rounded-[2px] relative group text-white w-[60px] ml-[5px]"
-        >
-          <a class="decoration-none flex py-[6px]" href="">
-            <img
-              class="size-[22px] mt-[3px] ml-[8px]"
-              src="./image/menu.svg"
-              alt="All-Menu"
-            />
-            <span class="text-[14px] font-bold mt-[3.5px] ml-[2px]">All</span>
-          </a>
-          <!-- all-container group-hover:visible-->
+      <!-- nav2 -->
+      <div class="flex h-[35px] w-[100%] font-fam bg-nav2">
+        <div class="leftNav">
+          <!-- all -->
           <div
-            class="alsolute flex flex-col z-5 w-[350px] h-[100vh] font-fam -left-[200%] invisible"
+            class="select h-[35px] w-[55px] px-[6px] ml-[10px] relative group"
           >
-            <!-- all-header -->
-            <div class="flex text-white bg-[#232f3e]">
-              <a class="flex px-[10px] py-[5px]" href="">
+            <a class="decoration-none flex" href="">
+              <div class="h-[35px] w-[25px]">
                 <img
-                  class="size-[40px] ml-[30px]"
-                  src="./image/all-profile.svg"
-                  alt="profile-icon"
+                  class="size-[23px] my-[5px]"
+                  src="./image/menu.svg"
+                  alt="flag"
                 />
-                <span class="text-[20px] mt-[5px] ml-[10px]"
-                  >Hello, sign in</span
-                >
-              </a>
-              <!-- close-btn -->
-              <a
-                href=""
-                class="absolute inline-block size-[40px] -right-[14%] top-[1.5%] border-w-[1.5px] border-white rounded-[3px]"
-              >
-                <img
-                  class="p-[1px] -ml-[3px]"
-                  src="./image/close.svg"
-                  alt="close-icon"
-                />
-              </a>
-            </div>
-            <!-- all-data -->
-            <div class="overflow-scroll overflow-x-hidden flex flex-col">
-              <div>
-                <!-- all-content-head -->
-                <span class="w-[360px] text-[20px] px-[40px] py-[15px]"
-                  >Trending</span
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Best Sellers</span>
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">New Releases</span>
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Movers and Shakers</span>
-                </a>
               </div>
-              <div>
-                <!-- all-content-head -->
-                <span class="w-[360px] text-[20px] px-[40px] py-[10px]"
-                  >Digital Content and Devices</span
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal"
-                    >Amazon miniTV- FREE entertainment</span
+              <span class="text-[15px] text-white font-bold my-[5px]">All</span>
+            </a>
+            <!-- all-container group-hover:visible-->
+            <div
+              class="drop-container w-[370px] h-[100vh] -mt-[190%] -ml-[40%] hover:"
+            >
+              <!-- all-header -->
+              <div class="flex h-[55px] text-white bg-allheader">
+                <a class="flex px-[10px] py-[6px]" href="">
+                  <div class="w-[50px]">
+                    <img
+                      class="size-[40px] ml-[30px]"
+                      src="./image/all-profile.svg"
+                      alt="profile-icon"
+                    />
+                  </div>
+                  <span class="text-[20px] my-[5px] mx-[30px]"
+                    >Hello, sign in</span
                   >
                 </a>
-                <!-- all-content-data -->
+                <!-- close-btn -->
                 <a
                   href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                  class="absolute inline-block size-[40px] top-[2.2%] left-[101.5%] border-w-[1.5px] border-white rounded-[3px]"
                 >
-                  <span class="font-normal">Echo & Alexa</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 56.4%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Fire TV</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 71.7%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Kindle E-Readers & eBooks</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 21%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Audible Audiobooks</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 38.1%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Amazon Prime Video</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 36.2%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Amazon Prime Music</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 35.7%"
-                  />
+                  <div
+                    class="size-[40px] border border-w-[1.5px] border-white rounded-[3px]"
+                  >
+                    <img
+                      class="size-[25px] m-[6px]"
+                      src="./image/close.svg"
+                      alt="close-icon"
+                    />
+                  </div>
                 </a>
               </div>
-              <div>
-                <!-- all-content-head -->
-                <span class="w-[360px] text-[20px] px-[40px] py-[10px]"
-                  >Shop by Category</span
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Mobiles, Computers</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 38%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">TV, Appliances, Electronics</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 21.9%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Men's Fashion</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 52.9%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Women's Fashion</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 44.5%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">See all</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/down-arrow.svg"
-                    alt="down-arrow-icon"
-                    style="margin-left: 3%"
-                  />
-                </a>
-              </div>
-              <div>
-                <!-- all-content-head -->
-                <span class="w-[360px] text-[20px] px-[40px] py-[10px]"
-                  >Programs & Features</span
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                  >Amazon Pay</a
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">Gift Cards & Mobile Recharges</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/right-arrow.svg"
-                    alt="right-arrow-icon"
-                    style="margin-left: 11.8%"
-                  />
-                </a>
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                  >Amazon Luanchpad</a
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                  >Amazon Business</a
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                >
-                  <span class="font-normal">See all</span>
-                  <img
-                    class="mt-[2px]"
-                    src="./image/down-arrow.svg"
-                    alt="down-arrow-icon"
-                    style="margin-left: 3%"
-                  />
-                </a>
-              </div>
-              <div>
-                <!-- all-content-head -->
-                <span class="w-[360px] text-[20px] px-[40px] py-[10px]"
-                  >Help & Settings</span
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                  >Your Account</a
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                  >Customer Service</a
-                >
-                <!-- all-content-data -->
-                <a
-                  href=""
-                  class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
-                  >Sign in</a
-                >
+              <!-- all-data -->
+              <div
+                class="overflow-scroll overflow-x-hidden flex flex-col bg-white"
+              >
+                <div class="flex flex-col">
+                  <!-- all-content-head -->
+                  <span class="w-[360px] text-[20px] px-[40px] py-[15px]"
+                    >Trending</span
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal">Best Sellers</span>
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal">New Releases</span>
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal">Movers and Shakers</span>
+                  </a>
+                </div>
+                <hr class="text-gray-300" />
+                <div class="flex flex-col">
+                  <!-- all-content-head -->
+                  <span class="w-[360px] text-[20px] px-[40px] py-[15px]"
+                    >Digital Content and Devices</span
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal"
+                      >Amazon miniTV- FREE entertainment</span
+                    >
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]">Echo & Alexa</span>
+                    <img
+                      class="size-[30px] mt-[5px] ml-[57.3%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]">Fire TV</span>
+                    <img
+                      class="size-[30px] mt-[5px] ml-[72.1%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]"
+                      >Kindle E-Readers & eBooks</span
+                    >
+                    <img
+                      class="size-[30px] mt-[5px] ml-[24.1%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]"
+                      >Audible Audiobooks</span
+                    >
+                    <img
+                      class="size-[30px] mt-[5px] ml-[40.2%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]"
+                      >Amazon Prime Video</span
+                    >
+                    <img
+                      class="size-[30px] mt-[5px] ml-[38.2%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]"
+                      >Amazon Prime Music</span
+                    >
+                    <img
+                      class="size-[30px] mt-[5px] ml-[37.8%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                </div>
+                <hr class="text-gray-300" />
+                <div class="flex flex-col">
+                  <!-- all-content-head -->
+                  <span class="w-[360px] text-[20px] px-[40px] py-[15px]"
+                    >Shop by Category</span
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]"
+                      >Mobiles, Computers</span
+                    >
+                    <img
+                      class="size-[30px] mt-[5px] ml-[39.9%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]"
+                      >TV, Appliances, Electronics</span
+                    >
+                    <img
+                      class="size-[30px] mt-[5px] ml-[24.8%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]">Men's Fashion</span>
+                    <img
+                      class="size-[30px] mt-[5px] ml-[54%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]">Women's Fashion</span>
+                    <img
+                      class="size-[30px] mt-[5px] ml-[46.1%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]">See all</span>
+                    <img
+                      class="size-[30px] mt-[8px] ml-[3%]"
+                      src="./image/down-arrow.svg"
+                      alt="down-arrow-icon"
+                    />
+                  </a>
+                </div>
+                <hr class="text-gray-300" />
+                <div class="flex flex-col">
+                  <!-- all-content-head -->
+                  <span class="w-[360px] text-[20px] px-[40px] py-[15px]"
+                    >Programs & Features</span
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                    >Amazon Pay</a
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]"
+                      >Gift Cards & Mobile Recharges</span
+                    >
+                    <img
+                      class="size-[30px] mt-[5px] ml-[15.2%]"
+                      src="./image/right-arrow.svg"
+                      alt="right-arrow-icon"
+                    />
+                  </a>
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                    >Amazon Luanchpad</a
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                    >Amazon Business</a
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="flex h-[45px] text-black px-[40px] hover:bg-[#e0e0e0]"
+                  >
+                    <span class="font-normal py-[10px]">See all</span>
+                    <img
+                      class="size-[30px] mt-[7px] ml-[3%]"
+                      src="./image/down-arrow.svg"
+                      alt="down-arrow-icon"
+                    />
+                  </a>
+                </div>
+                <hr class="text-gray-300" />
+                <div class="flex flex-col">
+                  <!-- all-content-head -->
+                  <span class="w-[360px] text-[20px] px-[40px] py-[15px]"
+                    >Help & Settings</span
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                    >Your Account</a
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                    >Customer Service</a
+                  >
+                  <!-- all-content-data -->
+                  <a
+                    href=""
+                    class="h-[45px] text-black px-[40px] py-[10px] hover:bg-[#e0e0e0]"
+                    >Sign in</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- nav-right -->
-        <div class="flex">
-          <!-- fresh select -->
+        <div class="rightNav flex">
+          <!-- fresh -->
           <div
-            class="inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px] relative group"
+            class="select h-[35px] w-[65px] ml-[1px] px-[6px] relative group"
           >
-            <a
-              class="decoration-none inline-block text-white text-center whitespace-nowrap px-[2px] py-[8px]"
-              href=""
-              style="display: flex"
-            >
-              <span class="text-[14px] font-[500] ml-[3px]">Fresh</span>
-              <img
-                class="h-[18px] w-[24px] mt-[3.5px] -ml-[3px]"
-                src="./image/drop-down.svg"
-                alt="drop-icon"
-              />
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[2px]"
+                >Fresh</span
+              >
+              <div>
+                <img
+                  class="size-[22px] mt-[7px]"
+                  src="./image/drop-down.svg"
+                  alt="drop-icon"
+                />
+              </div>
             </a>
             <!-- drop-container fresh-drop-container -->
             <div
-              class="flex absolute z-5 bg-white rounded-[2px] mt-[48px] invisible py-[5px] shadow-xl after:absolute after:-ml-[5px] after:border-[10px] after:border-x-transparent after:border-t-transparent after:border-b-white flex-col w-[360px] -top-[30%] -left-[5%] after:bottom-[100%] after:left-[12.8%] group-hover:visible"
+              class="drop-container after:border-t-transparent after:border-b-white w-[360px] -top-[40%] -left-[5%] after:bottom-[100%] after:left-[12.8%]"
             >
               <div class="flex justify-around mt-[20px] mb-[10px]">
                 <!-- img-container -->
@@ -921,7 +912,7 @@
                 >
                   <img
                     class="h-[80px] w-[120px] p-[5px] mt-[40px] ml-[20px]"
-                    src="./image/A-Fresh-Logo.png"
+                    src="./Amazon_Clone/using-html-tailwind/image/A-Fresh-Logo.png"
                     alt="fresh-logo"
                   />
                 </a>
@@ -932,7 +923,7 @@
                 >
                   <img
                     class="h-[80px] w-[120px] p-[5px] mt-[40px] ml-[20px]"
-                    src="./image/A-Fresh-Logo.png"
+                    src="./Amazon_Clone/using-html-tailwind/image/A-Fresh-Logo.png"
                     alt="fresh-meat-logo"
                   />
                 </a>
@@ -945,157 +936,144 @@
               >
             </div>
           </div>
-          <div
-            class="mxPlayer inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[6px] py-[8px]"
-              href=""
-              >MX Player</a
-            >
+          <!-- mxPlayer -->
+          <div class="select h-[35px] w-[85px] ml-[2px] px-[6px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >MX Player</span
+              >
+            </a>
           </div>
-          <div
-            class="sell inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[7px] py-[8px]"
-              href=""
-              >Sell</a
-            >
+          <!-- sell -->
+          <div class="select h-[35px] w-[38px] ml-[2px] px-[4px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Sell</span
+              >
+            </a>
           </div>
-          <div
-            class="aPay inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[6px] py-[8px]"
-              href=""
-              >Best Sellers</a
-            >
+          <!-- bestSellers -->
+          <div class="select h-[35px] w-[100px] ml-[2px] px-[6px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[8px]"
+                >Best Sellers</span
+              >
+            </a>
           </div>
-          <div
-            class="todayDeal inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[6px] py-[8px]"
-              href=""
-              >Today's Deals</a
-            >
+          <!-- 2daysDeal -->
+          <div class="select h-[35px] w-[100px] ml-[2px] px-[6px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Today's Deals</span
+              >
+            </a>
           </div>
-          <div
-            class="mobile inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[7px] py-[8px]"
-              href=""
-              >Mobiles</a
-            >
+          <!-- mobiles -->
+          <div class="select h-[35px] w-[70px] ml-[2px] px-[6px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Mobiles</span
+              >
+            </a>
           </div>
-          <div
-            class="custService inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[6px] py-[8px]"
-              href=""
-              >Customer Service</a
-            >
+          <!-- custServices -->
+          <div class="select h-[35px] w-[120px] ml-[2px] px-[2px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Customer Service</span
+              >
+            </a>
           </div>
-          <div
-            class="electronic inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[7px] py-[8px]"
-              href=""
-              >Electronics</a
-            >
+          <!-- electronics -->
+          <div class="select h-[35px] w-[85px] ml-[2px] px-[6px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Electronics</span
+              >
+            </a>
           </div>
           <!-- prime -->
           <div
-            class="prime inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px] relative group"
+            class="select h-[35px] w-[65px] ml-[1px] px-[6px] relative group"
           >
-            <a
-              class="flex decoration-none text-white text-center whitespace-nowrap px-[2px] py-[8px]"
-              href=""
-            >
-              <span class="text-[14px] font-[500] ml-[2px]">Prime</span>
-              <img
-                class="h-[18px] w-[24px] mt-[3.5px] -ml-[4px]"
-                src="./image/drop-down.svg"
-                alt="drop-icon"
-              />
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[2px]"
+                >Prime</span
+              >
+              <div>
+                <img
+                  class="size-[22px] mt-[7px]"
+                  src="./image/drop-down.svg"
+                  alt="drop-icon"
+                />
+              </div>
             </a>
             <!-- prime-drop-container drop-container -->
             <div
-              class="flex absolute z-5 bg-white rounded-[2px] mt-[48px] invisible py-[5px] shadow-xl after:absolute after:-ml-[5px] after:border-[10px] after:border-x-transparent after:border-t-transparent after:border-b-white flex-col w-[335px] -top-[30%] -left-[5%] after:bottom-[100%] after:left-[14.3%] group-hover:visible"
+              class="drop-container after:border-t-transparent after:border-b-white w-[335px] -top-[40%] -left-[3%] after:bottom-[100%] after:left-[14.3%] group-hover:visible"
             >
               <img
                 class="m-[10px]"
-                src="./image/prime-drop-img.jpg"
+                src="./Amazon_Clone/using-html-tailwind/image/prime-drop-img.jpg"
                 alt="join-prime-img"
               />
             </div>
           </div>
-          <div
-            class="new-release inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[6px] py-[8px]"
-              href=""
-              >New Releases</a
-            >
+          <!-- newRelease -->
+          <div class="select h-[35px] w-[100px] ml-[2px] px-[3px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >New Releases</span
+              >
+            </a>
           </div>
-          <div
-            class="a-pay inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[6px] py-[8px]"
-              href=""
-              >Amazon Pay</a
-            >
+          <!-- aPay -->
+          <div class="select h-[35px] w-[90px] ml-[2px] px-[3px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Amazon Pay</span
+              >
+            </a>
           </div>
-          <div
-            class="home-kitchen inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[6px] py-[8px]"
-              href=""
-              >Home & Kitchen</a
-            >
+          <!-- kitchen -->
+          <div class="select h-[35px] w-[115px] ml-[2px] px-[3px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Home & Kitchen</span
+              >
+            </a>
           </div>
-          <div
-            class="fashion inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[7px] py-[8px]"
-              href=""
-              >Fashion</a
-            >
+          <!-- fashion -->
+          <div class="select h-[35px] w-[63px] ml-[2px] px-[4px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Fashion</span
+              >
+            </a>
           </div>
-          <div
-            class="computer inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[6px] py-[8px]"
-              href=""
-              >Computers</a
-            >
+          <!-- computer -->
+          <div class="select h-[35px] w-[92px] ml-[2px] px-[7px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Computers</span
+              >
+            </a>
           </div>
-          <div
-            class="books inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[7px] py-[8px]"
-              href=""
-              >Books</a
-            >
+          <!-- books -->
+          <div class="select h-[35px] w-[55px] ml-[2px] px-[5px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Books</span
+              >
+            </a>
           </div>
-          <div
-            class="car-bikes inline-block text-white hover:border hover:border-white hover:rounded-[2px] ml-[4px]"
-          >
-            <a
-              class="decoration-none inline-block text-[14px] font-[500] text-white text-center whitespace-nowrap px-[6px] py-[8px]"
-              href=""
-              >Car & Motorbikes</a
-            >
+          <!-- carsBikes -->
+          <div class="select h-[35px] w-[120px] ml-[2px] px-[3px]">
+            <a class="decoration-none flex" href="">
+              <span class="text-[15px] text-white font-[500] my-[5px] ml-[4px]"
+                >Cars & Motorbike</span
+              >
+            </a>
           </div>
         </div>
       </div>
@@ -1106,9 +1084,8 @@
       <div
         class="flex justify-between relative w-[98%] m-auto h-[80vh] bg-center bg-cover bg-[url(./image/contentPage1.jpg)]"
       >
-        <!-- arrow -->
         <a
-          class="h-[300px] z-2 hover:cursor-pointer active:border active:border-[3px] active:border-blue-600 rounded-[2px] shadow-white"
+          class="h-[300px] z-2 hover:cursor-pointer active:border active:border-[2px] active:border-blue-600 active:rounded-[2px] active:outline-[3px] active:outline-white"
         >
           <img
             class="h-[35px] mt-[120px] mx-[25px]"
@@ -1116,9 +1093,8 @@
             alt="hot-content-left-arrow-icon"
           />
         </a>
-        <!-- arrow -->
         <a
-          class="h-[300px] z-2 hover:cursor-pointer active:border active:border-[3px] active:border-blue-600 rounded-[2px] shadow-white"
+          class="h-[300px] z-2 hover:cursor-pointer active:border active:border-[2px] active:border-blue-600 active:rounded-[2px] active:outline-[3px] active:outline-white"
         >
           <img
             class="h-[35px] mt-[120px] mx-[25px]"
@@ -1134,42 +1110,24 @@
       ></a>
       <!-- content-area -->
       <div
-        class="flex flex-col absolute w-[99%] h-[100%] top-[54.8%] left-[0.6%] gap-y-[20px]"
+        class="flex flex-col absolute w-[99%] h-[100%] top-[54.2%] left-[0.6%] gap-y-[20px]"
       >
-        <!-- row-box4 row1 -->
-        <div class="flex justify-evenly h-[450px] w-[100%]">
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white shadow-black"
-          ></div>
+        <!-- row1 box4 -->
+        <div class="box4-row">
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
         </div>
-        <!-- row-box4 row2 -->
-        <div class="flex justify-evenly h-[450px] w-[100%]">
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white shadow-black"
-          ></div>
+        <!-- row2 box4 -->
+        <div class="box4-row">
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
         </div>
-        <!-- row-slide row3 -->
-        <div
-          class="flex flex-col h-[325px] w-[97.3%] m-auto bg-white inset-shadow-black"
-        >
+        <!-- row3 box5 -->
+        <div class="box5-row">
           <p
             class="text-[20px] font-bold mt-[20px] mb-[10px] ml-[25px] mr-[20px]"
           >
@@ -1177,39 +1135,25 @@
           </p>
           <!-- box-area -->
           <div class="flex justify-evenly h-[320px]">
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
           </div>
         </div>
-        <!-- row-slide-arrow row3-arrow -->
+        <!-- row3 slide-arrow -->
         <div
           class="flex justify-between absolute h-[220px] w-[97.7%] top-[138%] left-[1.2%] group"
         >
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-left-arrow.svg"
               alt="row-left-arrow-icon"
             />
           </a>
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-right-arrow.svg"
@@ -1217,10 +1161,8 @@
             />
           </a>
         </div>
-        <!-- row-slide row4 -->
-        <div
-          class="flex flex-col h-[325px] w-[97.3%] m-auto bg-white inset-shadow-black"
-        >
+        <!-- row4 box5 -->
+        <div class="box5-row">
           <p
             class="text-[20px] font-bold mt-[20px] mb-[10px] ml-[25px] mr-[20px]"
           >
@@ -1228,39 +1170,25 @@
           </p>
           <!-- box-area -->
           <div class="flex justify-evenly h-[320px]">
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
           </div>
         </div>
-        <!-- row-slide-arrow row4-arrow -->
+        <!-- row4 slide-arrow -->
         <div
           class="flex justify-between absolute h-[220px] w-[97.7%] top-[185%] left-[1.2%] group"
         >
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-left-arrow.svg"
               alt="row-left-arrow-icon"
             />
           </a>
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-right-arrow.svg"
@@ -1268,25 +1196,15 @@
             />
           </a>
         </div>
-        <!-- row-box4 row5 -->
-        <div class="flex justify-evenly h-[450px] w-[100%]">
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
+        <!-- row5 box4 -->
+        <div class="box4-row">
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
         </div>
-        <!-- row-slide row6 -->
-        <div
-          class="flex flex-col h-[325px] w-[97.3%] m-auto bg-white inset-shadow-black"
-        >
+        <!-- row6 box5 -->
+        <div class="box5-row">
           <p
             class="text-[20px] font-bold mt-[20px] mb-[10px] ml-[25px] mr-[20px]"
           >
@@ -1294,39 +1212,25 @@
           </p>
           <!-- box-area -->
           <div class="flex justify-evenly h-[320px]">
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
           </div>
         </div>
-        <!-- row-slide-arrow row6-arrow -->
+        <!-- row6 slide-arrow -->
         <div
           class="flex justify-between absolute h-[220px] w-[97.7%] top-[297%] left-[1.2%] group"
         >
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-left-arrow.svg"
               alt="row-left-arrow-icon"
             />
           </a>
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-right-arrow.svg"
@@ -1334,10 +1238,8 @@
             />
           </a>
         </div>
-        <!-- row-slide row7 -->
-        <div
-          class="flex flex-col h-[325px] w-[97.3%] m-auto bg-white inset-shadow-black"
-        >
+        <!-- row7 box5 -->
+        <div class="box5-row">
           <p
             class="text-[20px] font-bold mt-[20px] mb-[10px] ml-[25px] mr-[20px]"
           >
@@ -1345,39 +1247,25 @@
           </p>
           <!-- box-area -->
           <div class="flex justify-evenly h-[320px]">
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
           </div>
         </div>
-        <!-- row-slide-arrow row7-arrow -->
+        <!-- row7 slide-arrow -->
         <div
           class="flex justify-between absolute h-[220px] w-[97.7%] top-[344%] left-[1.2%] group"
         >
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
-              src="./image/row-left-arrow.svg"
+              src="./image/row-right-arrow.svg"
               alt="row-left-arrow-icon"
             />
           </a>
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-right-arrow.svg"
@@ -1385,25 +1273,15 @@
             />
           </a>
         </div>
-        <!-- row-box4 row8 -->
-        <div class="flex justify-evenly h-[450px] w-[100%]">
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
+        <!-- row8 box4 -->
+        <div class="box4-row">
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
         </div>
-        <!-- row-slide row9 -->
-        <div
-          class="flex flex-col h-[325px] w-[97.3%] m-auto bg-white inset-shadow-black"
-        >
+        <!-- row9 box5 -->
+        <div class="box5-row">
           <p
             class="text-[20px] font-bold mt-[20px] mb-[10px] ml-[25px] mr-[20px]"
           >
@@ -1411,39 +1289,25 @@
           </p>
           <!-- box-area -->
           <div class="flex justify-evenly h-[320px]">
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
           </div>
         </div>
-        <!-- row-slide-arrow row9-arrow -->
+        <!-- row9 slide-arrow -->
         <div
           class="flex justify-between absolute h-[220px] w-[97.7%] top-[456%] left-[1.2%] group"
         >
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-left-arrow.svg"
               alt="row-left-arrow-icon"
             />
           </a>
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-right-arrow.svg"
@@ -1451,10 +1315,8 @@
             />
           </a>
         </div>
-        <!-- row-slide row10 -->
-        <div
-          class="flex flex-col h-[325px] w-[97.3%] m-auto bg-white inset-shadow-black"
-        >
+        <!-- row10 box5 -->
+        <div class="box5-row">
           <p
             class="text-[20px] font-bold mt-[20px] mb-[10px] ml-[25px] mr-[20px]"
           >
@@ -1462,39 +1324,25 @@
           </p>
           <!-- box-area -->
           <div class="flex justify-evenly h-[320px]">
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
           </div>
         </div>
-        <!-- row-slide-arrow row10-arrow -->
+        <!-- row10 slide-arrow -->
         <div
           class="flex justify-between absolute h-[220px] w-[97.7%] top-[503%] left-[1.2%] group"
         >
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-left-arrow.svg"
               alt="row-left-arrow-icon"
             />
           </a>
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-right-arrow.svg"
@@ -1502,25 +1350,15 @@
             />
           </a>
         </div>
-        <!-- row-box4 row11 -->
-        <div class="flex justify-evenly h-[450px] w-[100%]">
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
-          <div
-            class="h-[450px] w-[350px] rounded-[2px] bg-white inset-shadow-black"
-          ></div>
+        <!-- row11 box4 -->
+        <div class="box4-row">
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
+          <div class="box4-box"></div>
         </div>
-        <!-- row-slide row12 -->
-        <div
-          class="flex flex-col h-[325px] w-[97.3%] m-auto bg-white inset-shadow-black"
-        >
+        <!-- row12 box5 -->
+        <div class="box5-row">
           <p
             class="text-[20px] font-bold mt-[20px] mb-[10px] ml-[25px] mr-[20px]"
           >
@@ -1528,39 +1366,25 @@
           </p>
           <!-- box-area -->
           <div class="flex justify-evenly h-[320px]">
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
-            <div
-              class="h-[250px] w-[260px] rounded-[2px] bg-gray-300 shadow-black"
-            ></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
+            <div class="box5-box"></div>
           </div>
         </div>
-        <!-- row-slide-arrow row12-arrow -->
+        <!-- row12 slide-arrow -->
         <div
           class="flex justify-between absolute h-[220px] w-[97.7%] top-[615%] left-[1.2%] group"
         >
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-left-arrow.svg"
               alt="row-left-arrow-icon"
             />
           </a>
-          <a
-            class="h-[100px] w-[56px] mx-[22px] my-[55px] z-2 rounded-[4px] bg-gray-100 shadow-black invisible active:border active:border-[3px] active:border-blue-600 active:rounded-[4px] shadow-white group-hover:visible"
-          >
+          <a class="slide-arrow">
             <img
               class="h-[100px] w-[50px]"
               src="./image/row-right-arrow.svg"
@@ -1569,11 +1393,18 @@
           </a>
         </div>
       </div>
+
       <!-- recommend area -->
-      <div class="absolute h-[210px] w-[100%] py-[42px] top-[708%] bg-white shadow-black">
-        <hr class="text-gray-200 pt-[20px]"/>
+      <div
+        class="absolute h-[210px] w-[100%] py-[42px] top-[707.5%] bg-white shadow-black"
+      >
+        <hr class="text-gray-300 pt-[20px]" />
         <div class="py-[10px] -pb-[4px]">
-          <p class="text-[25px] text-center font-fam font-bold mt-[3px] mb-[7px]">See personalized recommendations</p>
+          <p
+            class="text-[26px] text-center font-fam font-bold mt-[3px] mb-[7px]"
+          >
+            See personalized recommendations
+          </p>
           <a
             href=""
             class="block text-[13px] text-center w-[240px] m-auto py-[5.5px] rounded-[30px] bg-yellow-300 hover:bg-yellow-400"
@@ -1586,21 +1417,21 @@
             >
           </span>
         </div>
-        <hr class="text-gray-200" />
+        <hr class="text-gray-300" />
       </div>
     </section>
 
-    <footer class="w-[100%] h-[700px] absolute top-[736.8%]">
+    <footer class="w-[100%] h-[700px] absolute top-[736.4%]">
       <!-- back-top -->
-      <div class="w-[100%] h-[48px] bg-[#3b4b5b]">
+      <div class="w-[100%] h-[48px] bg-backtop">
         <a
-          class="decoration-none inline-block w-[100%] h-[48px] text-[13.5px] text-white font-fam text-center py-[15px]"
-          href=""
+          class="decoration-none inline-block w-[100%] h-[48px] text-[14.5px] text-white font-fam text-center py-[12px]"
+          href="#home"
           >Back to top</a
         >
       </div>
       <!-- xtra-links -->
-      <div class="w-[100%] h-[375px] bg-[#23303e]">
+      <div class="w-[100%] h-[375px] bg-xtralinks-lang">
         <!-- row -->
         <div class="flex w-[70%] h-[50px] m-auto">
           <!-- col col1 -->
@@ -1608,155 +1439,99 @@
             class="flex flex-col gap-x-[90px] mt-[45px] font-fam text-white w-[110px] ml-[43px]"
           >
             <!-- headin -->
-            <span class="text-[16px] font-bold leading-[17px] mb-[12px]"
+            <span class="text-[17.5px] font-bold leading-[17px] mb-[12px]"
               >Get to Know Us</span
             >
             <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
+              class="links text-[16px] text-gray-200 leading-[26.5px] decoration-1 hover:underline"
               href=""
               >About Amazon</a
             >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Careers</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Press Releases</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Amazon Science</a
-            >
+            <a class="decoration-none xtralink-style" href="">Careers</a>
+            <a class="decoration-none xtralink-style" href="">Press Releases</a>
+            <a class="decoration-none xtralink-style" href="">Amazon Science</a>
           </div>
           <!-- col col2 -->
           <div
             class="flex flex-col gap-x-[90px] mt-[45px] font-fam text-white w-[110px] ml-[120px]"
           >
             <!-- headin -->
-            <span class="text-[16px] font-bold leading-[17px] mb-[12px]"
+            <span class="text-[17.5px] font-bold leading-[17px] mb-[12px]"
               >Connect with Us</span
             >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Facebook</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Twitter</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Instagram</a
-            >
+            <a class="decoration-none xtralink-style" href="">Facebook</a>
+            <a class="decoration-none xtralink-style" href="">Twitter</a>
+            <a class="decoration-none xtralink-style" href="">Instagram</a>
           </div>
           <!-- col col3 -->
           <div
-            class="flex flex-col gap-x-[90px] mt-[45px] font-fam text-white w-[180px] ml-[130px]"
+            class="flex flex-col gap-x-[90px] mt-[45px] font-fam text-white w-[190px] ml-[130px]"
           >
             <!-- headin -->
-            <span class="text-[16px] font-bold leading-[17px] mb-[12px]"
+            <span class="text-[17.5px] font-bold leading-[17px] mb-[12px]"
               >Make Money with Us</span
             >
+            <a class="decoration-none mb-[5px] xtralink-style" href=""
+              >Sell on Amazon
+            </a>
             <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
+              class="decoration-none leading-[17px] mb-[5px] xtralink-style"
               href=""
-              style="margin-bottom: 5px"
-              >Sell on Amazon</a
             >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              style="line-height: 17px; margin-bottom: 5px"
-              >Sell under Amazon Accelerator</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Protect and Build Your Brand</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Amazon Global Selling</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Supply to Amazon</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Become an Affiliate</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Fulfilment by Amazon</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Advertise Your Products</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Amazon Pay on Merchants</a
-            >
+              Sell under Amazon Accelerator
+            </a>
+            <a class="decoration-none xtralink-style" href="">
+              Protect and Build Your Brand
+            </a>
+            <a class="decoration-none xtralink-style" href="">
+              Amazon Global Selling
+            </a>
+            <a class="decoration-none xtralink-style" href="">
+              Supply to Amazon
+            </a>
+            <a class="decoration-none xtralink-style" href="">
+              Become an Affiliate
+            </a>
+            <a class="decoration-none xtralink-style" href="">
+              Fulfillment by Amazon
+            </a>
+            <a class="decoration-none xtralink-style" href="">
+              Advertise Your Products
+            </a>
+            <a class="decoration-none xtralink-style" href="">
+              Amazon Pay on Merchants
+            </a>
           </div>
           <!-- col col4 -->
           <div
-            class="flex flex-col gap-x-[90px] mt-[45px] font-fam text-white w-[180px] ml-[128px]"
+            class="flex flex-col gap-x-[90px] mt-[45px] font-fam text-white w-[180px] ml-[120px]"
           >
             <!-- headin -->
-            <span class="text-[16px] font-bold leading-[17px] mb-[12px]"
+            <span class="text-[17.5px] font-bold leading-[17px] mb-[12px]"
               >Let Us Help You</span
             >
+            <a class="decoration-none xtralink-style" href="">Your Account</a>
+            <a class="decoration-none mb-[5px] xtralink-style" href="">
+              Returns Centre
+            </a>
             <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
+              class="decoration-none leading-[17px] mb-[5px] xtralink-style"
               href=""
-              >Your Account</a
             >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              style="margin-bottom: 5px"
-              >Returns Centre</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              style="line-height: 17px; margin-bottom: 5px"
-              >Recalls and Product Safety Alerts</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >100% Purchase Protection</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Amazon App Download</a
-            >
-            <a
-              class="decoration-none text-[14px] text-[rgb(232, 229, 229)] leading-[26.5px] hover:underline"
-              href=""
-              >Help</a
-            >
+              Recalls and Product Safety Alerts
+            </a>
+            <a class="decoration-none xtralink-style" href="">
+              100% Purchase Protection
+            </a>
+            <a class="decoration-none xtralink-style" href="">
+              Amazon App Download
+            </a>
+            <a class="decoration-none xtralink-style" href="">Help</a>
           </div>
         </div>
       </div>
       <!-- lang-region -->
-      <div class="flex mt-[0.5px] bg-[#23303e]">
+      <div class="flex mt-[0.5px] bg-xtralinks-lang">
         <!-- logo -->
         <div class="w-[50%] py-[40px]">
           <a href="">
@@ -1770,24 +1545,139 @@
         <!-- other -->
         <div class="flex w-[50%] py-[24px]">
           <!-- other-btn lang -->
-          <div class="relative group mt-[3.5px]">
-            <a
-              class="decoration-none flex border border-gray-400 rounded-[3px] font-fam text-gray-200 w-[118px] h-[35px] -ml-[28px]"
-              href=""
-            >
-              <!-- img1 -->
+          <div
+            class="border border-gray-400 rounded-[3px] w-[118px] h-[35px] -ml-[28px] relative group mt-[3.5px]"
+          >
+            <a class="decoration-none flex font-fam w-[118px] h-[35px]" href="">
               <img
                 class="size-[13px] mt-[9px] ml-[9px]"
                 src="./image/global.svg"
                 alt="globe-icon"
               />
-              <span class="text-[13px] mt-[5px] ml-[10px]">English</span>
-              <!-- img2 -->
+              <span class="text-[15px] text-gray-300 mt-[5px] ml-[10px]"
+                >English</span
+              >
               <img
-                class="size-[13px] mt-[9px] ml-[23px]"
+                class="size-[10px] mt-[12px] ml-[23px]"
                 src="./image/select-arrows.svg"
-                alt="select-icon"
+                alt="select-arrow-icon"
               />
+              <!-- lang-drop-container -->
+              <div
+                class="drop-container after:border-t-transparent after:border-b-white w-[250px] -top-[45%] -left-[0%] after:bottom-[100%] after:left-[39.3%]"
+              >
+                <a
+                  href=""
+                  class="decoration-none flex px-[20px] py-[10px] -mt-[30px] hover:text-red-600 hover:underline"
+                >
+                  <input
+                    class="size-[15px] text-red-600"
+                    type="radio"
+                    id="EN"
+                    value="English"
+                    name="language"
+                    checked
+                  />
+                  <label class="lang-label" for="EN">English - EN</label>
+                </a>
+                <hr class="text-gray-200" />
+                <a
+                  href=""
+                  class="decoration-none flex px-[20px] pt-[10px] py-[5px] hover:text-red-600 hover:underline"
+                >
+                  <input
+                    class="size-[15px] hover:bg-red-500"
+                    type="radio"
+                    id="HI"
+                    value="Hindi"
+                    name="language"
+                  />
+                  <label class="lang-label" for="HI">हिन्दी - HI</label>
+                </a>
+                <a
+                  href=""
+                  class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
+                >
+                  <input
+                    class="size-[15px] text-red-600 focus:ring-red-600"
+                    type="radio"
+                    id="TA"
+                    value="Tamil"
+                    name="language"
+                  />
+                  <label class="lang-label" for="TA">தமிழ் - TA</label>
+                </a>
+                <a
+                  href=""
+                  class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
+                >
+                  <input
+                    class="size-[15px] hover:bg-red-500"
+                    type="radio"
+                    id="TE"
+                    value="Telugu"
+                    name="language"
+                  />
+                  <label class="lang-label" for="TE">తెలుగు - TE</label>
+                </a>
+                <a
+                  href=""
+                  class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
+                >
+                  <input
+                    class="size-[15px] hover:bg-red-500"
+                    type="radio"
+                    id="KN"
+                    value="Kannad"
+                    name="language"
+                  />
+                  <label class="lang-label" for="KN">ಕನ್ನಡ - KN</label>
+                </a>
+                <a
+                  href=""
+                  class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
+                >
+                  <input
+                    class="size-[15px] hover:bg-red-500"
+                    type="radio"
+                    id="ML"
+                    value="Malayalam"
+                    name="language"
+                  />
+                  <label class="lang-label" for="ML">മലയാളം - ML</label>
+                </a>
+                <a
+                  href=""
+                  class="decoration-none flex px-[20px] py-[5px] hover:text-red-600 hover:underline"
+                >
+                  <input
+                    class="size-[15px] hover:bg-red-500"
+                    type="radio"
+                    id="BE"
+                    value="Bengla"
+                    name="language"
+                  />
+                  <label class="lang-label" for="BE">বাংলা - BN</label>
+                </a>
+                <a
+                  href=""
+                  class="decoration-none flex px-[20px] py-[5px] hover:text-red-600"
+                >
+                  <input
+                    class="size-[15px] hover:bg-red-500"
+                    type="radio"
+                    id="MR"
+                    value="Marathi"
+                    name="language"
+                  />
+                  <label class="lang-label" for="MR">मराठी - MR</label>
+                </a>
+                <a
+                  href=""
+                  class="decoration-none text-[14px] px-[40px] pt-[10px] pb-[13px] text-blue-800 hover:underline"
+                  >Learn more</a
+                >
+              </div>
             </a>
           </div>
           <!-- other-btn region -->
@@ -1801,12 +1691,14 @@
               src="./image/flag.svg"
               alt="flag-icon"
             />
-            <span class="text-[13px] mt-[5px] ml-[6px]">India</span>
+            <span class="text-[15px] text-gray-300 mt-[5px] ml-[6px]"
+              >India</span
+            >
           </a>
         </div>
       </div>
       <!-- rights -->
-      <div class="flex flex-col w-[100%] h-[260px] bg-[#11161d]">
+      <div class="flex flex-col w-[100%] h-[260px] bg-rights">
         <!-- more-links -->
         <div class="flex">
           <!-- col1 rights-common -->
@@ -1869,7 +1761,7 @@
           class="flex flex-col text-[14px] text-center text-gray-50 font-fam leading-[20px] mt-[25px]"
         >
           <!-- links -->
-          <div class="flex gap-x-[20px] px-[565px] ml-[35px] text-[12px]">
+          <div class="flex gap-x-[15px] ml-[595px] text-[13.5px]">
             <a
               class="decoration-none font-fam text-gray-50 hover:underline"
               href=""
@@ -1886,7 +1778,7 @@
               >Interest-Based-Ads</a
             >
           </div>
-          <span class="font-fam text-[12px] text-gray-50"
+          <span class="font-fam text-[13.5px] text-gray-50 -mt-[2px]"
             >&copy 1996-2025, Amazon.com, Inc. or its affiliates</span
           >
         </div>
